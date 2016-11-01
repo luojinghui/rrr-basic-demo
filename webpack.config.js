@@ -84,4 +84,13 @@ module.exports = {
     contentBase: './src',
     hot: true
   }
+  //js压缩参数
+  // new webpack.optimize.UglifyJsPlugin({
+  //   compress: {
+  //     warnings: false,
+  //     drop_console: true
+  //   },
+  //   beautify:false,
+  //   comments:false
+  // }),
 }
