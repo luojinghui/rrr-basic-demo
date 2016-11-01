@@ -6,20 +6,19 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
-// import createStore from './store'
 import reducers from './reducers'
 import { initData } from './actions'
-// 按需增删改 start
 import RouteTest from './components/RouteTest'
 import FormTest from './components/FormTest'
 import App from './containers/App'
-// 按需增删改 end
+require('./base.css');
 
-// const store = createStore()
+
 const store = createStore(
     reducers,
     applyMiddleware(thunk)
 );
+
 const history = syncHistoryWithStore(hashHistory, store)
 
 store.dispatch(initData);
@@ -27,9 +26,9 @@ store.dispatch(initData);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} />
-      <Route path="/routetest" component={RouteTest} />
-      <Route path="/formtest" component={FormTest} />
+      <Route path="/" component={App} activeClassNema="active"/>
+      <Route path="/routetest" component={RouteTest} activeClassNema="active" />
+      <Route path="/formtest" component={FormTest} activeClassNema="active" />
     </Router>
   </Provider>,
   document.getElementById('root')
