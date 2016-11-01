@@ -8,6 +8,7 @@ import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 // import createStore from './store'
 import reducers from './reducers'
+import { initData } from './actions'
 // 按需增删改 start
 import RouteTest from './components/RouteTest'
 import FormTest from './components/FormTest'
@@ -20,6 +21,8 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 const history = syncHistoryWithStore(hashHistory, store)
+
+store.dispatch(initData);
 
 ReactDOM.render(
   <Provider store={store}>
