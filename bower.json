@@ -1,0 +1,22 @@
+{
+  "name": "React-demo",
+  "authors": [
+    "Leonard LiuTao <364125168@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "react": "^15.3.0",
+    "babel-standalone": "^6.10.3"
+  },
+  "devDependencies": {
+    "ldialog": "^1.0.6"
+  }
+}
