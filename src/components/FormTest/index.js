@@ -5,13 +5,12 @@
  */
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import style from '../../containers/App/style.less'
 import Header from '../Header'
 
 class FormTest extends Component {
   render() {
     return (
-      <div className={style.normal}>
+      <div className="normal">
             <Header></Header>
             <h2>router form test </h2>
       </div>

@@ -2,7 +2,6 @@
 import React, { Component } from 'react'
 import TodoTextInput from '../TodoTextInput'
 import classnames from 'classnames'
-import style from './style.less'
 
 class TodoItem extends Component {
   constructor(props, context) {

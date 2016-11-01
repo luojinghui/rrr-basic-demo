@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
 import Header from '../Header';
-import style from '../../containers/App/style.less'
 
 class RouteTest extends Component {
     constructor(props) {
@@ -10,7 +9,7 @@ class RouteTest extends Component {
 
   render() {
     return (
-        <div className={style.normal}>
+        <div className="">
           <Header></Header>
           <div>
               <div>

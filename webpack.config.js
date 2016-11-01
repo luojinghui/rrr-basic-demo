@@ -33,17 +33,16 @@ module.exports = {
       //   // exclude: path.resolve(__dirname, './node_modules'),
       //   loader: 'style-loader!css-loader'
       // },
-      // {
-      //   test: /\.less$/,
-      //   include: path.resolve(__dirname, './node_modules'),
-      //   loader: 'style-loader!css-loader!postcss-loader!less-loader'
-      // },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
+      },
       // {
       //   test: /\.css$/,
       //   include: path.resolve(__dirname, './node_modules'),
       //   loader: 'style-loader!css-loader!postcss-loader'
       // },
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
+      // { test: /\.js$/, exclude: /node_modules/, loader: 'babel' },
       { test: /\.css$/, loader: 'style!css' },
       {
         test: /\.(js|jsx)$/,

@@ -4,17 +4,15 @@ import { connect } from 'react-redux'
 import Header from '../../components/Header'
 import MainSection from '../../components/MainSection'
 import * as TodoActions from '../../actions/todos'
-import style from './style.less'
-require('./index.css');
 
 class App extends Component {
   render() {
     const { todos, actions, children } = this.props
     return (
-      <div className={style.normal}>
+      <div className="content">
         <Header />
         <MainSection todos={todos} actions={actions} addTodo={actions.addTodo} />
-        {/*{children}*/}
+        {children}
       </div>
     )
   }

@@ -4,7 +4,6 @@ import TodoItem from '../TodoItem'
 import TodoTextInput from '../TodoTextInput'
 import Footer from '../Footer'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../../constants/filters'
-import style from './style.less'
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,
@@ -64,26 +63,17 @@ class MainSection extends Component {
 
   render() {
     const { todos, actions } = this.props
-    const { filter } = this.state
-
-    const filteredTodos = todos.filter(TODO_FILTERS[filter])
-    const completedCount = todos.reduce((count, todo) => {
-      return todo.completed ? count + 1 : count
-    }, 0)
 
     return (
-      <section className={style.main}>
+      <section>
         <TodoTextInput
             newTodo
             onSave={::this.handleSave}
             placeholder="What needs to be done?" />
-        {this.renderToggleAll(completedCount)}
-        <ul className={style.normal}>
-          {filteredTodos.map(todo =>
-            <TodoItem key={todo.id} todo={todo} {...actions} />
-          )}
+        <ul>
+          <li>123</li>
+          <li>234</li>
         </ul>
-        {this.renderFooter(completedCount)}
       </section>
     )
   }
