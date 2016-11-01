@@ -11,14 +11,12 @@ import { initData } from './actions'
 import RouteTest from './components/RouteTest'
 import FormTest from './components/FormTest'
 import App from './containers/App'
-require('./base.css');
-
+require('./base.css')
 
 const store = createStore(
     reducers,
     applyMiddleware(thunk)
 );
-
 const history = syncHistoryWithStore(hashHistory, store)
 
 store.dispatch(initData);
@@ -26,9 +24,9 @@ store.dispatch(initData);
 ReactDOM.render(
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App} activeClassNema="active"/>
-      <Route path="/routetest" component={RouteTest} activeClassNema="active" />
-      <Route path="/formtest" component={FormTest} activeClassNema="active" />
+      <Route path="/" component={App}/>
+      <Route path="/routetest" component={RouteTest} />
+      <Route path="/formtest" component={FormTest} />
     </Router>
   </Provider>,
   document.getElementById('root')
