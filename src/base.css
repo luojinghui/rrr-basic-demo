@@ -34,3 +34,17 @@ input[type="checkbox"] {
 b, strong {
   font-weight: bold;
 }
+li {
+  list-style: none;
+}
+ul {
+  padding: 0px;
+}
+header a {
+  color: #f65131;
+  text-decoration: none;
+}
+header a.active {
+  color: #555;
+  text-decoration: none;
+}
