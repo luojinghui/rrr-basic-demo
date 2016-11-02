@@ -21,13 +21,25 @@ const history = syncHistoryWithStore(hashHistory, store)
 
 store.dispatch(initData);
 
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <Router history={history}>
+//       <Route path="/" component={App}/>
+//       <Route path="/routetest" component={RouteTest} />
+//       <Route path="/formtest" component={FormTest} />
+//     </Router>
+//   </Provider>,
+//   document.getElementById('root')
+// )
+
+
 ReactDOM.render(
-  <Provider store={store}>
-    <Router history={history}>
-      <Route path="/" component={App}/>
-      <Route path="/routetest" component={RouteTest} />
-      <Route path="/formtest" component={FormTest} />
-    </Router>
-  </Provider>,
-  document.getElementById('root')
+    <Provider>
+        <Router history={hashHistory}>
+            <Route path="/" component={App}>
+                <IndexRoute component={Index}/>
+                <Route path=""/>
+            </Route>
+        </Router>
+    </Provider>
 )
