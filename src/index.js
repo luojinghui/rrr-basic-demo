@@ -38,7 +38,8 @@ ReactDOM.render(
         <Router history={hashHistory}>
             <Route path="/" component={App}>
                 <IndexRoute component={Index}/>
-                <Route path=""/>
+                <Route path="routetest" component={RouteTest}/>
+                <Route path="formtest" component={FormTest}/>
             </Route>
         </Router>
     </Provider>
