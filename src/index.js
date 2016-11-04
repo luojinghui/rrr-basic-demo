@@ -14,7 +14,8 @@ import { initData } from './actions'
 // import App from './containers/App'
 import Index from './components/Test/Index'
 import App from './components/Test/App'
-// import NavOne from './components/Test/NavOne'
+import NavOne from './components/Test/NavOne'
+import NavTwo from './components/Test/NavTwo'
 
 
 require('./base.css')
@@ -44,8 +45,8 @@ ReactDOM.render(
         <Router history={history}>
             <Route path="/" component={App} >
                 <IndexRoute component={Index}/>
-                {/*<Route path="nav1" component={NavOne}/>*/}
-                {/*<Route path="test2" component={Test2}/>*/}
+                <Route path="nav1" component={NavOne}/>
+                <Route path="nav2" component={NavTwo}/>
             </Route>
         </Router>
     </Provider>,
