@@ -5,6 +5,7 @@
  */
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
+import {Link} from 'react-router'
 import Header from './Header'
 import Footer from './Footer'
 
@@ -18,9 +19,15 @@ class App extends Component {
                     <div className="container">
                         <div className="flex">
                             <div className="one">
-                                <div>nav-1</div>
-                                <div>nav-2</div>
-                                <div>nav-3</div>
+                                <div>
+                                    <Link to="/" activeClassName="on">nav-1</Link>
+                                </div>
+                                <div>
+                                    <Link to="nav1" activeClassName="on">nav-2</Link>
+                                </div>
+                                <div>
+                                    <Link to="nav2" activeClassName="on">nav-3</Link>
+                                </div>
                             </div>
                             {this.props.children}
                         </div>
