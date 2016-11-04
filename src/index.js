@@ -1,16 +1,22 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 import { syncHistoryWithStore } from 'react-router-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux'
 import reducers from './reducers'
 import { initData } from './actions'
-import RouteTest from './components/RouteTest'
-import FormTest from './components/FormTest'
-import App from './containers/App'
+
+// import RouteTest from './components/RouteTest'
+// import FormTest from './components/FormTest'
+// import App from './containers/App'
+import Index from './components/Test/Index'
+import App from './components/Test/App'
+// import NavOne from './components/Test/NavOne'
+
+
 require('./base.css')
 
 const store = createStore(
@@ -19,7 +25,7 @@ const store = createStore(
 );
 const history = syncHistoryWithStore(hashHistory, store)
 
-store.dispatch(initData);
+// store.dispatch(initData);
 
 // ReactDOM.render(
 //   <Provider store={store}>
@@ -34,13 +40,14 @@ store.dispatch(initData);
 
 
 ReactDOM.render(
-    <Provider>
-        <Router history={hashHistory}>
-            <Route path="/" component={App}>
+    <Provider store={store}>
+        <Router history={history}>
+            <Route path="/" component={App} >
                 <IndexRoute component={Index}/>
-                <Route path="routetest" component={RouteTest}/>
-                <Route path="formtest" component={FormTest}/>
+                {/*<Route path="nav1" component={NavOne}/>*/}
+                {/*<Route path="test2" component={Test2}/>*/}
             </Route>
         </Router>
-    </Provider>
+    </Provider>,
+    document.getElementById('root')
 )
