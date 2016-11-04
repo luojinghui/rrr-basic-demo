@@ -103,3 +103,7 @@ body {
 .on {
   color: #f65131;
 }
+a {
+  color: #333;
+  text-decoration: none;
+}
