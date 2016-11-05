@@ -39,7 +39,6 @@ const history = syncHistoryWithStore(hashHistory, store)
 //   document.getElementById('root')
 // )
 
-
 ReactDOM.render(
     <Provider store={store}>
         <Router history={history}>
