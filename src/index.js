@@ -48,6 +48,5 @@ ReactDOM.render(
                 <Route path="nav2" component={NavTwo}/>
             </Route>
         </Router>
-    </Provider>,
-    document.getElementById('root')
+    </Provider>, document.getElementById('root')
 )
