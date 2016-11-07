@@ -11,3 +11,14 @@ export const initData = (dispatch) => {
             })
     })
 }
+
+export const initNavData = (dispatch) => {
+    request
+        .get('../data/nav.json')
+        .end((err, res) => {
+            dispatch({
+                type :'initNavEnd',
+                data: res.body
+            })
+        })
+}
