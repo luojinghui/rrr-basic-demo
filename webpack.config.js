@@ -1,7 +1,7 @@
 var webpack = require('webpack'),
   autoprefixer = require('autoprefixer'),
   HtmlWebpackPlugin = require('html-webpack-plugin'),
-  // DashboardPlugin = require('webpack-dashboard/plugin'),
+  DashboardPlugin = require('webpack-dashboard/plugin'),
   path = require('path')
 
 module.exports = {
