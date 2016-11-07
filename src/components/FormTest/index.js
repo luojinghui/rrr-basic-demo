@@ -10,7 +10,7 @@ import Header from '../Header'
 class FormTest extends Component {
   render() {
     return (
-      <div className="normal">
+      <div className="content">
             <Header></Header>
             <h2>router form test </h2>
       </div>

@@ -9,7 +9,7 @@ class RouteTest extends Component {
 
   render() {
     return (
-        <div className="">
+        <div className="content">
           <Header></Header>
           <div>
               <div>
