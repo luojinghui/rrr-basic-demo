@@ -15,6 +15,7 @@ class App extends Component {
     constructor(props) {
         super(props)
         this.getNavTwoData = this.getNavTwoData.bind(this);
+        this.getNavThreeData = this.getNavThreeData.bind(this);
     }
 
     getNavTwoData() {
@@ -25,6 +26,19 @@ class App extends Component {
             .end((err, res) => {
                 dispatch({
                     type: 'nav2',
+                    data: res.body
+                })
+            })
+    }
+
+    getNavThreeData() {
+        const dispatch = this.props.dispatch;
+
+        request
+            .get('../data/nav2.json')
+            .end((err, res) => {
+                dispatch({
+                    type: 'nav3',
                     data: res.body
                 })
             })
@@ -45,7 +59,7 @@ class App extends Component {
                                     <Link to="nav1" activeClassName="on" onClick={this.getNavTwoData}>nav-2</Link>
                                 </div>
                                 <div>
-                                    <Link to="nav2" activeClassName="on">nav-3</Link>
+                                    <Link to="nav2" activeClassName="on" onClick={this.getNavThreeData}>nav-3</Link>
                                 </div>
                             </div>
                             {this.props.children}
