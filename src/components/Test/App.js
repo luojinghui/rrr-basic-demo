@@ -6,12 +6,31 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
 import {Link} from 'react-router'
+import request from 'superagent'
+
 import Header from './Header'
 import Footer from './Footer'
 
 class App extends Component {
+    constructor(props) {
+        super(props)
+        this.getNavTwoData = this.getNavTwoData.bind(this);
+    }
+
+    getNavTwoData() {
+        const dispatch = this.props.dispatch;
+
+        request
+            .get('../data/nav1.json')
+            .end((err, res) => {
+                dispatch({
+                    type: 'nav2',
+                    data: res.body
+                })
+            })
+    }
+
     render() {
-        console.log(this.props);
         return (
             <div>
                 <Header></Header>
@@ -23,7 +42,7 @@ class App extends Component {
                                     <Link to="/" activeClassName="on">nav-1</Link>
                                 </div>
                                 <div>
-                                    <Link to="nav1" activeClassName="on">nav-2</Link>
+                                    <Link to="nav1" activeClassName="on" onClick={this.getNavTwoData}>nav-2</Link>
                                 </div>
                                 <div>
                                     <Link to="nav2" activeClassName="on">nav-3</Link>
