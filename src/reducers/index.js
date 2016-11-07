@@ -1,9 +1,11 @@
 
 import { routerReducer as routing } from 'react-router-redux'
 import { combineReducers } from 'redux'
-import { initData } from './init'
+import { initData, initNav1, initNav } from './init'
 
 export default combineReducers({
   routing,
-  initData
+  initData,
+  initNav1,
+  initNav
 })
