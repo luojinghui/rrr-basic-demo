@@ -5,7 +5,7 @@
  */
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {Link} from 'react-router'
+import {Link, IndexLink} from 'react-router'
 import request from 'superagent'
 
 import Header from './Header'
@@ -53,7 +53,7 @@ class App extends Component {
                         <div className="flex">
                             <div className="one">
                                 <div>
-                                    <Link to="/" activeClassName="on">nav-1</Link>
+                                    <IndexLink to="/" activeClassName="on">nav-1</IndexLink>
                                 </div>
                                 <div>
                                     <Link to="nav1" activeClassName="on" onClick={this.getNavTwoData}>nav-2</Link>
