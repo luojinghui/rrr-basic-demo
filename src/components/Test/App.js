@@ -18,9 +18,11 @@ class App extends Component {
         this.getNavThreeData = this.getNavThreeData.bind(this);
     }
 
-    getNavTwoData() {
+    getNavTwoData(e, self) {
         const dispatch = this.props.dispatch;
 
+        console.log(e);
+        console.log(self);
         request
             .get('../data/nav1.json')
             .end((err, res) => {
@@ -51,38 +53,26 @@ class App extends Component {
                 <div className="content">
                     <div className="container">
                         <div className="flex">
-                            {/*<div className="one">*/}
-                                {/*<div>*/}
-                                    {/*<IndexLink to="/" activeclassName="on">nav-1</IndexLink>*/}
-                                {/*</div>*/}
-                                {/*<div>*/}
-                                    {/*<Link to="nav1" activeclassName="on" onClick={this.getNavTwoData}>nav-2</Link>*/}
-                                {/*</div>*/}
-                                {/*<div>*/}
-                                    {/*<Link to="nav2" activeclassName="on" onClick={this.getNavThreeData}>nav-3</Link>*/}
-                                {/*</div>*/}
-                            {/*</div>*/}
-
                             <ul className="one">
-                                <li className="nav-1">
-                                    <IndexLink to="/" activeClassName="on open">第一步</IndexLink>
+                                <li>
+                                    <IndexLink to="/" className="nav" activeClassName="open">第一步</IndexLink>
                                 </li>
-                                <li className="nav-1">
-                                    <Link to="nav1" activeClassName="on open" onClick={this.getNavTwoData}>第二步</Link>
-                                    <ul className="one two">
+                                <li>
+                                    <Link to="nav1" className="nav" activeClassName="open" onClick={ this.getNavTwoData.bind(this) }>第二步</Link>
+                                    <ul className="sub">
                                         <li>
-                                            <IndexLink to="nav1" activeClassName="on open">1-1</IndexLink>
+                                            <IndexLink to="nav1" activeClassName="on">1-1</IndexLink>
                                         </li>
                                         <li>
-                                            <Link to="nav1/nav12" activeClassName="on open">1-2</Link>
+                                            <Link to="nav1/nav12" activeClassName="on">1-2</Link>
                                         </li>
                                         <li>1-3</li>
                                     </ul>
                                 </li>
-                                <li className="nav-1">
-                                    <Link to="nav2" activeClassName="on open" onClick={this.getNavThreeData}>第三步</Link>
-                                    <ul className="one two">
-                                        <li className="on">1-1</li>
+                                <li>
+                                    <Link to="nav2" activeClassName="open" className="nav" onClick={this.getNavThreeData}>第三步</Link>
+                                    <ul className="sub">
+                                        <li>1-1</li>
                                         <li>1-2</li>
                                         <li>1-3</li>
                                     </ul>
