@@ -51,17 +51,43 @@ class App extends Component {
                 <div className="content">
                     <div className="container">
                         <div className="flex">
-                            <div className="one">
-                                <div>
-                                    <IndexLink to="/" activeClassName="on">nav-1</IndexLink>
-                                </div>
-                                <div>
-                                    <Link to="nav1" activeClassName="on" onClick={this.getNavTwoData}>nav-2</Link>
-                                </div>
-                                <div>
-                                    <Link to="nav2" activeClassName="on" onClick={this.getNavThreeData}>nav-3</Link>
-                                </div>
-                            </div>
+                            {/*<div className="one">*/}
+                                {/*<div>*/}
+                                    {/*<IndexLink to="/" activeclassName="on">nav-1</IndexLink>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                    {/*<Link to="nav1" activeclassName="on" onClick={this.getNavTwoData}>nav-2</Link>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                    {/*<Link to="nav2" activeclassName="on" onClick={this.getNavThreeData}>nav-3</Link>*/}
+                                {/*</div>*/}
+                            {/*</div>*/}
+
+                            <ul className="one">
+                                <li className="nav-1">
+                                    <IndexLink to="/" activeClassName="on open">第一步</IndexLink>
+                                </li>
+                                <li className="nav-1">
+                                    <Link to="nav1" activeClassName="on open" onClick={this.getNavTwoData}>第二步</Link>
+                                    <ul className="one two">
+                                        <li>
+                                            <IndexLink to="nav1" activeClassName="on open">1-1</IndexLink>
+                                        </li>
+                                        <li>
+                                            <Link to="nav1/nav12" activeClassName="on open">1-2</Link>
+                                        </li>
+                                        <li>1-3</li>
+                                    </ul>
+                                </li>
+                                <li className="nav-1">
+                                    <Link to="nav2" activeClassName="on open" onClick={this.getNavThreeData}>第三步</Link>
+                                    <ul className="one two">
+                                        <li className="on">1-1</li>
+                                        <li>1-2</li>
+                                        <li>1-3</li>
+                                    </ul>
+                                </li>
+                            </ul>
                             {this.props.children}
                         </div>
                     </div>
