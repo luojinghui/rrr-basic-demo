@@ -18,6 +18,7 @@ import Index from './components/Test/Index'
 import App from './components/Test/App'
 import NavOne from './components/Test/NavOne'
 import NavTwo from './components/Test/NavTwo'
+import Inbox1 from './components/Test/Inbox1'
 
 require('./base.css')
 
@@ -38,7 +39,9 @@ ReactDOM.render(
         <Router history={history}>
             <Route path="/" component={App} >
                 <IndexRoute component={Index}/>
-                <Route path="nav1" component={NavOne}/>
+                <Route path="nav1" component={NavOne}>
+                    <Route path="nav12" component={NavTwo}/>
+                </Route>
                 <Route path="nav2" component={NavTwo}/>
             </Route>
         </Router>
