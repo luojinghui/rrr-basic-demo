@@ -4,22 +4,26 @@
  * Time: 下午3:18
  */
 import React, {Component} from 'react';
+import {IndexLink} from 'react-router';
+import { Row, Col } from 'antd';
 
 class Header extends Component {
     render() {
         return (
             <header>
-                <ul>
-                    <li>
-                        <a className="on" href="">index</a>
-                    </li>
-                    <li>
-                        <a href="">weike</a>
-                    </li>
-                    <li>
-                        <a href="">serve</a>
-                    </li>
-                </ul>
+                <Row >
+                    <Col span={8} className="tc">
+                        <IndexLink to="/">
+                            <h3>index</h3>
+                        </IndexLink>
+                    </Col>
+                    <Col span={8} className="tc">
+                        <h3>weike</h3>
+                    </Col>
+                    <Col span={8} className="tc">
+                        <h3>serve</h3>
+                    </Col>
+                </Row>
             </header>
         );
     }
