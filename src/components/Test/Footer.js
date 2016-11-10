@@ -4,16 +4,26 @@
  * Time: 下午3:19
  */
 import React, {Component} from 'react';
+import {IndexLink} from 'react-router';
+import { Row, Col } from 'antd';
 
 class Footer extends Component {
     render() {
         return (
             <footer>
-                <ul>
-                    <li>关于我们</li>
-                    <li>下载app</li>
-                    <li>联系我们</li>
-                </ul>
+                <Row >
+                    <Col span={8} className="tc">
+                        <IndexLink to="/">
+                            <span>Index</span>
+                        </IndexLink>
+                    </Col>
+                    <Col span={8} className="tc">
+                        <span>下载app</span>
+                    </Col>
+                    <Col span={8} className="tc">
+                        <span>联系我们</span>
+                    </Col>
+                </Row>
             </footer>
         );
     }
