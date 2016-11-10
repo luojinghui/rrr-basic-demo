@@ -10,6 +10,9 @@ import request from 'superagent'
 
 import Header from './Header'
 import Footer from './Footer'
+import Slider from './Slider'
+import { Row, Col } from 'antd';
+
 
 class App extends Component {
     constructor(props) {
@@ -49,45 +52,51 @@ class App extends Component {
     render() {
         return (
             <div>
-                <Header></Header>
-                <div className="content">
-                    <div className="container">
-                        <div className="flex">
-                            <ul className="one">
-                                <li>
-                                    <IndexLink to="/" className="nav" activeClassName="open">第一步</IndexLink>
-                                </li>
-                                <li>
-                                    <Link to="nav1" className="nav" activeClassName="open" onClick={ this.getNavTwoData.bind(this) }>第二步</Link>
-                                    <ul className="sub">
-                                        <li>
-                                            <IndexLink to="nav1" activeClassName="on">1-1</IndexLink>
-                                        </li>
-                                        <li>
-                                            <Link to="nav1/nav12" activeClassName="on">1-2</Link>
-                                        </li>
-                                        <li>1-3</li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <Link to="nav2" activeClassName="open" className="nav" onClick={this.getNavThreeData}>第三步</Link>
-                                    <ul className="sub">
-                                        <li>1-1</li>
-                                        <li>1-2</li>
-                                        <li>1-3</li>
-                                    </ul>
-                                </li>
-                            </ul>
-                            {this.props.children}
+                <div>
+                    <Header></Header>
+                    <div className="content">
+                        <div className="container">
+                            <Row>
+                                <Col md={5} >
+                                    <Slider />
+                                </Col>
+                                <Col md={19}>
+                                    {this.props.children}
+                                </Col>
+                            </Row>
                         </div>
                     </div>
+                    <Footer></Footer>
                 </div>
-                <Footer></Footer>
             </div>
         );
     }
 }
-
+{/*<ul className="one">*/}
+{/*<li>*/}
+{/*<IndexLink to="/" className="nav" activeClassName="open">第一步</IndexLink>*/}
+{/*</li>*/}
+{/*<li>*/}
+{/*<Link to="nav1" className="nav" activeClassName="open" onClick={ this.getNavTwoData.bind(this) }>第二步</Link>*/}
+{/*<ul className="sub">*/}
+{/*<li>*/}
+{/*<IndexLink to="nav1" activeClassName="on">1-1</IndexLink>*/}
+{/*</li>*/}
+{/*<li>*/}
+{/*<Link to="nav1/nav12" activeClassName="on">1-2</Link>*/}
+{/*</li>*/}
+{/*<li>1-3</li>*/}
+{/*</ul>*/}
+{/*</li>*/}
+{/*<li>*/}
+{/*<Link to="nav2" activeClassName="open" className="nav" onClick={this.getNavThreeData}>第三步</Link>*/}
+{/*<ul className="sub">*/}
+{/*<li>1-1</li>*/}
+{/*<li>1-2</li>*/}
+{/*<li>1-3</li>*/}
+{/*</ul>*/}
+{/*</li>*/}
+{/*</ul>*/}
 const mapStateToProps = (state) => (state)
 
 export default connect(mapStateToProps)(App);
