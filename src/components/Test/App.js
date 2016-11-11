@@ -56,14 +56,16 @@ class App extends Component {
                     <Header></Header>
                     <div className="content">
                         <div className="container">
-                            <Row>
-                                <Col md={5} >
-                                    <Slider />
-                                </Col>
-                                <Col md={19}>
-                                    {this.props.children}
-                                </Col>
-                            </Row>
+                            <div className="e-menu">
+                                <Row>
+                                    <Col md={5} >
+                                        <Slider />
+                                    </Col>
+                                    <Col md={19}>
+                                        {this.props.children}
+                                    </Col>
+                                </Row>
+                            </div>
                         </div>
                     </div>
                     <Footer></Footer>

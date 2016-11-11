@@ -96,18 +96,8 @@ html:after, html:before {
       -ms-flex: 1;
           flex: 1;
 }
-.one {
-  width: 120px;
-  text-align: center;
-  border: 1px solid #eee;
-  margin-right: 20px;
-}
 .two {
   border: 1px solid transparent;
-}
-.one div {
-  cursor: pointer;
-  margin: 10px 0;
 }
 body {
   margin-top: 20px;
@@ -123,44 +113,6 @@ a {
 .one {
   display: block;
 }
-.one ul {
-  display: block;
-}
-.one li {
-  padding: 10px 0;
-  color: #333;
-  cursor: pointer;
-  text-align: left;
-  padding-left: 20px;
-
-  -webkit-transition: all ease .5s;
-  -moz-transition: all ease .5s;
-  transition: all ease .5s;
-}
-.nav .toggle {
-  width: 10px;
-  margin: 0 0 2px 2px;
-
-  transition: transform ease .5s .1s;
-}
-.nav+.sub {
-  max-height: 0px;
-  overflow: hidden;
-  transition: max-height 600ms ease-in-out;
-}
-.nav.open .toggle {
-  transform: rotate(180deg);
-}
-.nav.open+.sub {
-  max-height: 300px;
-}
-.sub .on {
-  color: #f65131;
-}
-.nav.open {
-  color: #f65131;
-}
-
 
 
 @keyframes slideD {
@@ -216,4 +168,107 @@ a {
   line-height: 55px!important;
   height: 55px!important;
   font-size: 18px!important;
+}
+.ant-menu-item-selected > a, .ant-menu-item-selected > a:hover {
+  color: #f65131;
+}
+
+
+.menu-inline {
+  width: 200px;
+  text-align: left;
+  border-right: 1px solid #e9e9e9;
+  margin-right: 20px;
+  box-shadow: none;
+
+  outline: none;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+  color: #666;
+  background: #fff;
+  line-height: 46px;
+}
+
+.menu-item {
+  border-right: 1px solid #e9e9e9;
+  margin-left: -1px;
+  left: 1px;
+  position: relative;
+  z-index: 1;
+  padding: 0px 16px 0 28px;
+
+  line-height: 55px;
+  height: 55px;
+  font-size: 18px;
+}
+.menu-item, .menu-submenu, .menu-submenu-title {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.menu-submenu {
+  position: relative;
+}
+.menu-submenu-title {
+  line-height: 55px;
+  height: 55px;
+  font-size: 18px;
+}
+.menu-inline > .menu-item {
+  padding: 0px 16px 0 28px;
+}
+.menu-submenu > .menu-submenu-title {
+  padding: 0px 16px 0 28px;
+}
+.sub-mini {
+  font-size: 14px;
+  padding-left: 52px!important;
+}
+.menu-sub.menu-inline > .menu-item {
+  line-height: 42px;
+  height: 42px;
+  list-style: none;
+}
+.menu-submenu-title i {
+  font-size: 18px;
+}
+.menu-item-selected {
+  border-right: 2px solid #f65131;
+  color: #f65131;
+}
+.menu-submenu-title:hover, .sub-mini:hover, .menu-item:hover {
+  color: #f65131;
+}
+
+
+.menu-submenu-inline > .menu-submenu-title:after {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  text-rendering: auto;
+  position: absolute;
+  -webkit-transition: -webkit-transform .3s ease;
+  transition: -webkit-transform .3s ease;
+  transition: transform .3s ease;
+  transition: transform .3s ease, -webkit-transform .3s ease;
+  content: "\E61D";
+  right: 16px;
+  top: 0;
+  display: inline-block;
+  font-size: 12px;
+  font-size: 8px \9;
+  -webkit-transform: scale(0.66666667) rotate(0deg);
+  -ms-transform: scale(0.66666667) rotate(0deg);
+  transform: scale(0.66666667) rotate(0deg);
+  -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(sizingMethod='auto expand', M11=1, M12=0, M21=0, M22=1)";
+  zoom: 1;
+}
+.menu-submenu-open.menu-submenu-inline > .menu-submenu-title:after {
+  -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
+  -webkit-transform: rotate(180deg) scale(0.75);
+  -ms-transform: rotate(180deg) scale(0.75);
+  transform: rotate(180deg) scale(0.75);
 }
