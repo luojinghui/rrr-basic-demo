@@ -154,7 +154,7 @@ a {
 }
 .ant-menu-item:hover, .ant-menu-item-active, .ant-menu-submenu-active, .ant-menu-submenu-title:hover {
   background-color: transparent;
-  color: #f65131;
+  /*color: #f65131;*/
 }
 .tc {
   text-align: center;
@@ -237,9 +237,9 @@ a {
   border-right: 2px solid #f65131;
   color: #f65131;
 }
-.menu-submenu-title:hover, .sub-mini:hover, .menu-item:hover {
-  color: #f65131;
-}
+/*.menu-submenu-title:hover, .sub-mini:hover, .menu-item:hover {*/
+  /*color: #f65131;*/
+/*}*/
 
 
 .menu-submenu-inline > .menu-submenu-title:after {
